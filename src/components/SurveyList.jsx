@@ -23,5 +23,6 @@ function SurveyList(props) {
 
 SurveyList.propTypes = {
   surveyList: PropTypes.array,
-
 }
+
+export default SurveyList;

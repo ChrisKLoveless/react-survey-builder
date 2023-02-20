@@ -56,7 +56,7 @@ function SurveyControl () {
     buttonText = "Return to Survey List"; 
   } else {
     currentlyVisibleState = <SurveyList 
-                              ticketList={mainSurveyList} />;
+                              surveyList={mainSurveyList} />;
     buttonText = "Create Survey"; 
   }
   return (
