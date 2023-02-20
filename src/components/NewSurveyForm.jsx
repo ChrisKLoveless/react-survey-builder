@@ -12,8 +12,7 @@ function NewSurveyForm(props) {
       q2: event.target.q2.value,
       q3: event.target.q3.value,
       q4: event.target.q4.value,
-      q5: event.target.q5.value,
-      q6: event.target.q6.value
+      q5: event.target.q5.value
     });
   }
 

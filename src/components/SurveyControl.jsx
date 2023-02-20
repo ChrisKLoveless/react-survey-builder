@@ -62,7 +62,7 @@ function SurveyControl () {
   return (
     <React.Fragment>
       {currentlyVisibleState}
-      {error ? null : <button onClick={handleClick}>{buttonText}</button>} 
+      {error ? null : <button className="btn btn-dark" onClick={handleClick}>{buttonText}</button>} 
     </React.Fragment>
   );
 }

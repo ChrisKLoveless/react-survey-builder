@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Survey(props) {
   return (
-    <div>
+    <div className='survey'>
       <h3>Survey Title: {props.title}</h3>
       <h6>Question #1: {props.q1}</h6>
       <h6>Question #2: {props.q2}</h6>
