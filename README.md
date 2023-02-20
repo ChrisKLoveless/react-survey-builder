@@ -1,3 +1,16 @@
+# React Survey Builder
+
+### Author: Chris Loveless
+
+### Description: 
+This app was created using create-react-app template. It is mean to serve as a survey builder for users to create and store various surveys. It will feature Authentication using Firebase and Firestore databases. The user will be able to complete a survey and view other user's surveys.
+
+### Mock-Up
+![diagram](public/survey-app-diagram.jpg)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
