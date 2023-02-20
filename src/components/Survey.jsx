@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Survey(props) {
   return (
-    <div className='survey'>
+    <div className='survey' onClick={() => props.whenSurveyClicked(props.id)}>
       <h3>Survey Title: {props.title}</h3>
       <h6>Question #1: {props.q1}</h6>
       <h6>Question #2: {props.q2}</h6>
@@ -21,7 +21,8 @@ Survey.propTypes = {
   q3: PropTypes.string,
   q4: PropTypes.string,
   q5: PropTypes.string,
-  id: PropTypes.string
+  id: PropTypes.string,
+  whenSurveyClicked: PropTypes.func
 }
 
 export default Survey;

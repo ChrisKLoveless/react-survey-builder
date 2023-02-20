@@ -5,7 +5,7 @@ function Header() {
     <div className="header">
       <h1>Survey Builder</h1>
     </div>
-  )
+  );
 }
 
 export default Header;

@@ -7,6 +7,7 @@ function SurveyList(props) {
     <div className="survey-list">
       {props.surveyList.map((survey) => 
         <Survey 
+          whenSurveyClicked={props.onSurveySelection}
           title={survey.title}
           q1={survey.q1}
           q2={survey.q2}
@@ -23,6 +24,7 @@ function SurveyList(props) {
 
 SurveyList.propTypes = {
   surveyList: PropTypes.array,
+  onSurveySelection: PropTypes.func
 }
 
 export default SurveyList;
