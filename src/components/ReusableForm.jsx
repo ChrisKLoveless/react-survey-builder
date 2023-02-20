@@ -29,7 +29,7 @@ function ReusableForm(props) {
         type="text"
         name='q5'
         placeholder='Question #5' />
-        <button type='submit'>{props.buttonText}</button>
+        <button className="btn btn-success btn-sm" type='submit'>{props.buttonText}</button>
       </form>
     </div>
   );

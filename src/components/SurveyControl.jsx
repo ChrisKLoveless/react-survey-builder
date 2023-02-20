@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import SurveyList from './SurveyList';
 import NewSurveyForm from "./NewSurveyForm";
 import db from '../firebase';
@@ -62,7 +62,7 @@ function SurveyControl () {
   return (
     <React.Fragment>
       {currentlyVisibleState}
-      {error ? null : <button className="btn btn-dark" onClick={handleClick}>{buttonText}</button>} 
+      {error ? null : <button className="btn btn-primary btn-sm" onClick={handleClick}>{buttonText}</button>} 
     </React.Fragment>
   );
 }
