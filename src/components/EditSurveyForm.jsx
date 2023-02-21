@@ -21,7 +21,7 @@ function EditSurveyForm (props) {
   return (
     <React.Fragment>
       <ReusableForm 
-        onEditSurvey={handleEditSurveyFormSubmission} 
+        formSubmissionHandler={handleEditSurveyFormSubmission} 
         buttonText="Update Survey" />
     </React.Fragment>
   );

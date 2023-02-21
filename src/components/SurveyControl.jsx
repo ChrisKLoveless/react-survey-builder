@@ -3,7 +3,7 @@ import SurveyList from './SurveyList';
 import NewSurveyForm from "./NewSurveyForm";
 import SurveyDetail from './SurveyDetail';
 import EditSurveyForm from './EditSurveyForm';
-import db from '../firebase';
+import db from '../firebase.jsx';
 import { collection, addDoc, onSnapshot, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 
 function SurveyControl () {
@@ -21,13 +21,8 @@ function SurveyControl () {
         const surveys = [];
         collectionSnapshot.forEach((doc) => {
           surveys.push({
-            title: doc.data().title,
-            q1: doc.data().q1,
-            q2: doc.data().q2,
-            q3: doc.data().q3,
-            q4: doc.data().q4,
-            q5: doc.data().q5,
-            id: doc.data().id
+            ...doc.data(),
+            id: doc.id
           });
         });
         setMainSurveyList(surveys);
@@ -59,8 +54,7 @@ function SurveyControl () {
   }
   
   const handleEditingSurveyInList = async (surveyToEdit) => {
-    const surveyRef = doc(db, "surveys", surveyToEdit.id);
-    await updateDoc(surveyRef, surveyToEdit);
+    await updateDoc(doc(db, "surveys", surveyToEdit.id), surveyToEdit);
     setEditing(false);
     setSelectedSurvey(null);
   }
