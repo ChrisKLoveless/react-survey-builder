@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 function SurveyDetail(props) {
-  const { survey, onClickingDelete, onClickingEdit } = props;
+  const { survey, onClickingEdit, onClickingDelete  } = props;
 
   return (
     <div className="survey-details">
@@ -21,8 +21,8 @@ function SurveyDetail(props) {
 
 SurveyDetail.propTypes = {
   survey: PropTypes.object,
-  onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onClickingDelete: PropTypes.func
 };
 
 export default SurveyDetail;
