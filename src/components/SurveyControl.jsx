@@ -3,6 +3,7 @@ import SurveyList from './SurveyList';
 import NewSurveyForm from "./NewSurveyForm";
 import SurveyDetail from './SurveyDetail';
 import EditSurveyForm from './EditSurveyForm';
+import AnswerSurveyForm from './AnswerSurveyForm';
 import { db, auth } from '../firebase.jsx';
 import { collection, addDoc, onSnapshot, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 
@@ -13,6 +14,7 @@ function SurveyControl() {
   const [selectedSurvey, setSelectedSurvey] = useState(null);
   const [error, setError] = useState(null);
   const [editing, setEditing] = useState(false);
+  const [answerSurveyForm, setAnswerSurveyForm] = useState(false);
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -39,6 +41,7 @@ function SurveyControl() {
       setFormVisibleOnPage(false);
       setSelectedSurvey(null);
       setEditing(false);
+      setAnswerSurveyForm(false);
     } else {
       setFormVisibleOnPage(!formVisibleOnPage);
     }
@@ -69,6 +72,15 @@ function SurveyControl() {
     setSelectedSurvey(selection);
   }
 
+  const handleAnswerClick = () => {
+    setAnswerSurveyForm(true);
+  }
+
+  const handleAddingAnswers = async (newAnswerData) => {
+    await addDoc(collection(db, "answers"), newAnswerData);
+    setAnswerSurveyForm(false);
+  }
+
 
   if (auth.currentUser == null) {
     return (
@@ -83,6 +95,11 @@ function SurveyControl() {
 
     if (error) {
       currentlyVisibleState = <p>There was an error: {error}</p>
+    } else if (answerSurveyForm) {
+      currentlyVisibleState = <AnswerSurveyForm
+        survey={selectedSurvey}
+        onAnswerSurvey={handleAddingAnswers} />
+      buttonText = "Return to Survey List";
     } else if (editing) {
       currentlyVisibleState = <EditSurveyForm
         survey={selectedSurvey}
@@ -92,7 +109,8 @@ function SurveyControl() {
       currentlyVisibleState = <SurveyDetail
         survey={selectedSurvey}
         onClickingDelete={handleDeletingSurvey}
-        onClickingEdit={handleEditClick} />
+        onClickingEdit={handleEditClick}
+        onClickingAnswer={handleAnswerClick} />
       buttonText = "Return to Survey List";
     } else if (formVisibleOnPage) {
       currentlyVisibleState = <NewSurveyForm

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Answers(props) {
   return (
-    <div className="answer">
+    <div className="answers">
       <h4>Answers to @Survey</h4>
       <h6>A1: {props.a1}</h6>
       <h6>A2: {props.a2}</h6>
