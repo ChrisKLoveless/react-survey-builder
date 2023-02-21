@@ -15,6 +15,7 @@ function SurveyControl() {
   const [error, setError] = useState(null);
   const [editing, setEditing] = useState(false);
   const [answerSurveyForm, setAnswerSurveyForm] = useState(false);
+  const [mainAnswersList, setMainAnswersList] = useState([]);
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -28,6 +29,26 @@ function SurveyControl() {
           });
         });
         setMainSurveyList(surveys);
+      },
+      (error) => {
+        setError(error.message)
+      }
+    );
+    return () => unSubscribe();
+  }, []);
+
+  useEffect(() => {
+    const unSubscribe = onSnapshot(
+      collection(db, "answers"),
+      (collectionSnapshot) => {
+        const answers = [];
+        collectionSnapshot.forEach((doc) => {
+          answers.push({
+            ...doc.data(),
+            id: doc.id
+          });
+        });
+        setMainAnswersList(answers);
       },
       (error) => {
         setError(error.message)
@@ -79,6 +100,9 @@ function SurveyControl() {
   const handleAddingAnswers = async (newAnswerData) => {
     await addDoc(collection(db, "answers"), newAnswerData);
     setAnswerSurveyForm(false);
+    setFormVisibleOnPage(false);
+    setSelectedSurvey(null);
+    setEditing(false);
   }
 
 
@@ -108,6 +132,7 @@ function SurveyControl() {
     } else if (selectedSurvey != null) {
       currentlyVisibleState = <SurveyDetail
         survey={selectedSurvey}
+        answersList={mainAnswersList}
         onClickingDelete={handleDeletingSurvey}
         onClickingEdit={handleEditClick}
         onClickingAnswer={handleAnswerClick} />
