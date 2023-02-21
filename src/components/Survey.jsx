@@ -7,7 +7,7 @@ function Survey(props) {
       <h4><strong>Survey Title:</strong> </h4>
       <h6>{props.title}</h6>
     </div>
-  )
+  );
 }
 
 Survey.propTypes = {
