@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 function Survey(props) {
   return (
     <div className='survey' onClick={() => props.whenSurveyClicked(props.id)}>
-      <h4><strong>Survey Title:</strong> </h4>
-      <h6>{props.title}</h6>
+      <h4 className='font-bold text-2xl'>Survey Title:</h4>
+      <h6 className='pb-4'>{props.title}</h6>
     </div>
   );
 }

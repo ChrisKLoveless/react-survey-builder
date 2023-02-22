@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../index.css';
 import Header from './Header';
 import SurveyControl from './SurveyControl';
 import SignIn from "./SignIn";

@@ -4,6 +4,7 @@ import Answers from "./Answers";
 
 function SurveyDetail(props) {
   const { survey, onClickingEdit, onClickingDelete, onClickingAnswer  } = props;
+  const surveyAnswers = props.answersList.filter(answers => answers.surveyId === survey.id)
 
   return (
     <div className="survey-details">
@@ -17,7 +18,8 @@ function SurveyDetail(props) {
       <h6><strong>Id:</strong> {survey.id}</h6>
       <hr />
       <h2>Answers List for "{survey.title}"</h2><br />
-      {props.answersList.map((answer) => 
+      
+      {surveyAnswers.map((answer) => 
         <Answers 
         a1={answer.a1}
         a2={answer.a2}
