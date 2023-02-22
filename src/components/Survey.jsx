@@ -1,11 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+
 
 function Survey(props) {
   return (
     <div className='survey' onClick={() => props.whenSurveyClicked(props.id)}>
-      <h4 className='font-bold text-2xl'>Survey Title:</h4>
-      <h6 className='pb-4'>{props.title}</h6>
+      <table className='mt-4'>
+        <tr>
+          <th className='pl-4'>Survey Title</th>
+          <th className='pl-4'>Author</th>
+          <th className='pl-4'>Timestamp</th>
+        </tr>
+        <tr>
+          <td>{props.title}</td>
+          <td>{props.userId}</td>
+          <td>Timestamp goes here</td>
+        </tr>
+      </table>
     </div>
   );
 }

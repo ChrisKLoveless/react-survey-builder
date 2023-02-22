@@ -8,7 +8,7 @@ function SurveyDetail(props) {
 
   return (
     <div className="survey-details">
-      <h2>Survey Details:</h2>
+      <h2 className='font-bold text-2xl'>Survey Details:</h2>
       <h6><strong>Title:</strong> {survey.title}</h6>
       <h6><strong>Question #1:</strong> {survey.q1}</h6>
       <h6><strong>Question #2:</strong> {survey.q2}</h6>
@@ -18,7 +18,7 @@ function SurveyDetail(props) {
       <h6><strong>Id:</strong> {survey.id}</h6>
       <h6><strong>User Id:</strong> {survey.userId}</h6>
       <hr />
-      <h2>Answers List for "{survey.title}"</h2><br />
+      <h2 className='font-bold text-2xl'>Answers List for "{survey.title}"</h2><br />
       
       {surveyAnswers.map((answer) => 
       <div className="answers-list">

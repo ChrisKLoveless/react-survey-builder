@@ -11,6 +11,7 @@ function Answers(props) {
       <h6><strong>Answer #5:</strong> {props.a5}</h6>
       <h6><strong>AnswerId:</strong> {props.id}</h6>
       <h6><strong>SurveyId</strong>: {props.surveyId}</h6>
+      <hr />
     </div>
   );
 }
