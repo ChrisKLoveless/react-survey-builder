@@ -75,7 +75,7 @@ function SignIn(){
 
       {signOutSuccess}
       <br />
-      <button className="btn btn-danger btn-sm" onClick={doSignOut}>Sign out</button>
+      <button className="btn btn-warning btn-sm" onClick={doSignOut}>Sign out</button>
     </React.Fragment>
   );
 }

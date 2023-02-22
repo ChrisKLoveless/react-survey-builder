@@ -8,15 +8,15 @@ function SurveyDetail(props) {
   return (
     <div className="survey-details">
       <h2>Survey Details:</h2>
-      <h3>Title: {survey.title}</h3>
-      <h6>Question #1: {survey.q1}</h6>
-      <h6>Question #2: {survey.q2}</h6>
-      <h6>Question #3: {survey.q3}</h6>
-      <h6>Question #4: {survey.q4}</h6>
-      <h6>Question #5: {survey.q5}</h6>
-      <h6>Id: {survey.id}</h6>
+      <h6><strong>Title:</strong> {survey.title}</h6>
+      <h6><strong>Question #1:</strong> {survey.q1}</h6>
+      <h6><strong>Question #2:</strong> {survey.q2}</h6>
+      <h6><strong>Question #3:</strong> {survey.q3}</h6>
+      <h6><strong>Question #4:</strong> {survey.q4}</h6>
+      <h6><strong>Question #5:</strong> {survey.q5}</h6>
+      <h6><strong>Id:</strong> {survey.id}</h6>
       <hr />
-      <h2>Answers List:</h2>
+      <h2>Answers List for "{survey.title}"</h2><br />
       {props.answersList.map((answer) => 
         <Answers 
         a1={answer.a1}
@@ -25,12 +25,13 @@ function SurveyDetail(props) {
         a4={answer.a4}
         a5={answer.a5}
         id={answer.id}
+        surveyId={answer.surveyId}
         />
       )}
       <hr />
-      <button onClick={onClickingEdit}>Update Survey</button>
-      <button onClick={() => onClickingDelete(survey.id)}>Delete Survey</button>
-      <button onClick={() => onClickingAnswer(survey.id)}>Answer Survey</button>
+      <button className="btn btn-warning btn-sm" onClick={onClickingEdit}>Update Survey</button>
+      <button className="btn btn-danger btn-sm" onClick={() => onClickingDelete(survey.id)}>Delete Survey</button>
+      <button className="btn btn-success btn-sm" onClick={() => onClickingAnswer(survey.id)}>Answer Survey</button>
     </div>
   );
 }

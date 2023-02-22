@@ -20,32 +20,32 @@ function AnswerSurveyForm(props) {
     <div className="answer-form">
       <h4>Complete the Survey: {survey.title}</h4>
       <form onSubmit={handleAnswerSurveyFormSubmission}>
-        <label>{survey.q1}</label>
+        <label className="mt-4">{survey.q1}</label><br />
         <input 
         type="text"
         name="a1"
-        placeholder="Answer for Question 1" />
-        <label>{survey.q2}</label>
+        placeholder="Answer for Question 1" /><br />
+        <label className="mt-4">{survey.q2}</label><br />
         <input 
         type="text"
         name="a2"
-        placeholder="Answer for Question 2" />
-        <label>{survey.q3}</label>
+        placeholder="Answer for Question 2" /><br />
+        <label className="mt-4">{survey.q3}</label><br />
         <input 
         type="text"
         name="a3"
-        placeholder="Answer for Question 3" />
-        <label>{survey.q4}</label>
+        placeholder="Answer for Question 3" /><br />
+        <label className="mt-4">{survey.q4}</label><br />
         <input 
         type="text"
         name="a4"
-        placeholder="Answer for Question 4" />
-        <label>{survey.q5}</label>
+        placeholder="Answer for Question 4" /><br />
+        <label className="mt-4">{survey.q5}</label><br />
         <input 
         type="text"
         name="a5"
-        placeholder="Answer for Question 5" />
-        <button type="submit">Submit Answers</button>
+        placeholder="Answer for Question 5" /><br />
+        <button type="submit" className="btn btn-success btn-sm mt-4">Submit Answers</button>
       </form>
     </div>
   );
