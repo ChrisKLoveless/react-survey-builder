@@ -18,6 +18,7 @@ Survey.propTypes = {
   q4: PropTypes.string,
   q5: PropTypes.string,
   id: PropTypes.string,
+  userId: PropTypes.string,
   whenSurveyClicked: PropTypes.func
 }
 

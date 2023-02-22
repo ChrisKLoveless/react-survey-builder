@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReusableForm from "./ReusableForm";
+import { auth } from "./../firebase.jsx";
+
 
 
 function NewSurveyForm(props) {
+
   function handleNewSurveySubmission(event) {
     event.preventDefault();
     props.onNewSurveyCreation({
@@ -12,7 +15,8 @@ function NewSurveyForm(props) {
       q2: event.target.q2.value,
       q3: event.target.q3.value,
       q4: event.target.q4.value,
-      q5: event.target.q5.value
+      q5: event.target.q5.value,
+      userId: auth.currentUser.uid
     });
   }
 

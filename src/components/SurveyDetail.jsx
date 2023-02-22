@@ -4,7 +4,7 @@ import Answers from "./Answers";
 
 function SurveyDetail(props) {
   const { survey, onClickingEdit, onClickingDelete, onClickingAnswer  } = props;
-  const surveyAnswers = props.answersList.filter(answers => answers.surveyId === survey.id)
+  const surveyAnswers = props.answersList.filter(answers => answers.surveyId === survey.id);
 
   return (
     <div className="survey-details">
@@ -16,10 +16,12 @@ function SurveyDetail(props) {
       <h6><strong>Question #4:</strong> {survey.q4}</h6>
       <h6><strong>Question #5:</strong> {survey.q5}</h6>
       <h6><strong>Id:</strong> {survey.id}</h6>
+      <h6><strong>User Id:</strong> {survey.userId}</h6>
       <hr />
       <h2>Answers List for "{survey.title}"</h2><br />
       
       {surveyAnswers.map((answer) => 
+      <div className="answers-list">
         <Answers 
         a1={answer.a1}
         a2={answer.a2}
@@ -29,7 +31,9 @@ function SurveyDetail(props) {
         id={answer.id}
         surveyId={answer.surveyId}
         />
-      )}
+      </div>
+        )}
+        
       <hr />
       <button className="btn btn-warning btn-sm" onClick={onClickingEdit}>Update Survey</button>
       <button className="btn btn-danger btn-sm" onClick={() => onClickingDelete(survey.id)}>Delete Survey</button>
