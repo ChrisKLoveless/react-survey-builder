@@ -9,6 +9,15 @@ This app was created using create-react-app template. It is mean to serve as a s
 ![diagram](public/survey-app-diagram.jpg)
 
 
+## Firbase Setup Instructions
+1. Follow instructions to add Firebase to a React project using npm [here](https://www.learnhowtoprogram.com/react/react-with-nosql/adding-firebase-to-react) 
+2. Create a file in the root directory named `.env` and copy over the contents of the .envTemplate file
+3. Input the information from the project settings within the Firebase console according to the template file.
+
+## Start-up Instructions:
+1. ` $ git clone ` this repo to your desktop and cd into the `react-surbey-builder` directory.
+2. run ` $ npm install ` to intall required dependencies and packages.
+3. run ` $ npm start ` to run the develeopment server
 
 
 # Getting Started with Create React App
