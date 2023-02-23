@@ -1,17 +1,60 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { auth } from './../firebase.jsx';
+
 
 function Answers(props) {
+
   return (
     <div className="answers">
-      <h6><strong>Answer #1:</strong> {props.a1}</h6>
-      <h6><strong>Answer #2:</strong> {props.a2}</h6>
-      <h6><strong>Answer #3:</strong> {props.a3}</h6>
-      <h6><strong>Answer #4:</strong> {props.a4}</h6>
-      <h6><strong>Answer #5:</strong> {props.a5}</h6>
-      <h6><strong>AnswerId:</strong> {props.id}</h6>
-      <h6><strong>SurveyId</strong>: {props.surveyId}</h6>
-      <hr />
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-6 py-3">
+                
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Answer #1
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Answer #2
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Answer #3
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Answer #4
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Answer #5
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <th scope="row" class="px-6 py-4 font-medium">
+                {}
+              </th>
+              <td class="px-6 py-4">
+                {props.a1}
+              </td>
+              <td class="px-6 py-4">
+                {props.a2}
+              </td>
+              <td class="px-6 py-4">
+                {props.a3}
+              </td>
+              <td class="px-6 py-4">
+                {props.a4}
+              </td>
+              <td class="px-6 py-4">
+                {props.a5}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

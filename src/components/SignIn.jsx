@@ -45,37 +45,37 @@ function SignIn(){
 
   return (
     <React.Fragment>
-      <h2>Sign up</h2>
+      <h2 className="text-2xl">Sign up</h2>
       {signUpSuccess}
       <form onSubmit={doSignUp} className="mb-4">
-        <input
+        <input className="border-2 rounded"
           type='text'
           name='email'
-          placeholder='email' />
-        <input
+          placeholder="Email"/>
+        <input className="border-2 rounded"
           type='password'
           name='password'
           placeholder='Password' />
-        <button className="btn btn-primary btn-sm" type='submit'>Sign up</button>
+        <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type='submit'>Sign up</button>
       </form>
 
-      <h2>Sign In</h2>
+      <h2 className="text-2xl">Sign In</h2>
       {signInSuccess}
       <form onSubmit={doSignIn} className="mb-4">
-        <input
+        <input className="border-2 rounded"
           type='text'
           name='signInEmail'
-          placeholder='email' />
-        <input
+          placeholder='Email' />
+        <input className="border-2 rounded"
           type='password'
           name='signInPassword'
           placeholder='Password' />
-        <button className="btn btn-primary btn-sm" type='submit'>Sign In</button>
+        <button className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type='submit'>Sign In</button>
       </form>
 
       {signOutSuccess}
       <br />
-      <button className="btn btn-warning btn-sm" onClick={doSignOut}>Sign out</button>
+      <button className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900" onClick={doSignOut}>Sign out</button>
     </React.Fragment>
   );
 }

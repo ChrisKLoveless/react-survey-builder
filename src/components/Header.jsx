@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 function Header() {
   return (
     <div className="header mt-3">
-      <Navbar bg='green-400' expand='lg'>
+      <Navbar bg='green-300' expand='lg'>
         <NavbarBrand href="/"><h2>Survey Builder</h2></NavbarBrand>
         <Nav className="me-auto">
           <Nav.Link href="/"><h5>Home</h5></Nav.Link>
